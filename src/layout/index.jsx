@@ -48,16 +48,18 @@ export default function MainLayout() {
 
     return (
         <Layout justify="center" items="center">
-            <Header style={{ display: 'flex', alignItems: 'center' }}>
-                <div className="flex flex-row gap-5">
-                    <div className="w-[150px] flex flex-col justify-center">
-                        <img src={`${process.env.PUBLIC_URL}/logo.png`} alt="logo" />
+            <Header style={{ display: 'flex', alignItems: 'center', minWidth: 0 }}>
+                <div className="flex flex-row gap-5 min-w-[300px] flex-none md:mr-24">
+                    <div className="md:flex flex-row">
+                        <div className="w-[150px] flex-shrink-0 flex flex-col justify-center">
+                            <img className="" src={`${process.env.PUBLIC_URL}/logo.png`} alt="logo" />
+                        </div>
+                        <div className="md:text-[20px] text-[15px] text-white flex flex-col justify-end md:items-end min-w-[178px] line-clamp-1 ">AI工业软件暑期学校</div>
                     </div>
-                    <div className="text-[20px] text-white flex flex-col justify-end items-end">AI工业软件暑期学校</div>
                 </div>
                 
                 <Menu
-                    className="flex justify-start ml-[200px]"
+                    className="flex justify-start"
                     theme="dark"
                     mode="horizontal"
                     // defaultSelectedKeys={['home']}
@@ -72,11 +74,10 @@ export default function MainLayout() {
             </Header>
             <Content className="py-[50px] w-full flex justify-center min-h-[calc(100vh-133px)]">
                 <div
-                className="w-[1000px] min-w-[1000px]"
+                className=" w-full md:w-[1000px] md:min-w-[1000px] md:p-10 p-2"
                 style={{
                     background: colorBgContainer,
                     minHeight: 280,
-                    padding: 24,
                     borderRadius: borderRadiusLG,
                 }}
                 >

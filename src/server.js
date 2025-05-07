@@ -1,6 +1,6 @@
 import { strapi } from "@strapi/client";
 
-const host = 'http://localhost:1337';
+const host = process.env.REACT_APP_SERVER_HOST;
 
 export function getImageUrl(uri) {
     return `${host}${uri}`;
